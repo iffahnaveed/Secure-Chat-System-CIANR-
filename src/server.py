@@ -7,6 +7,9 @@ import socket
 import json
 import time
 import os
+from dotenv import load_dotenv
+load_dotenv()
+
 import base64
 from datetime import datetime
 from dotenv import load_dotenv
@@ -58,7 +61,7 @@ class SecureChatServer:
             self.db_conn = mysql.connector.connect(
                 host=os.getenv('DB_HOST', 'localhost'),
                 user=os.getenv('DB_USER', 'root'),
-                password=os.getenv('DB_PASSWORD', ''),
+                password=os.getenv('DB_PASS', ''),
                 database=os.getenv('DB_NAME', 'securechat')
             )
             print("[+] Connected to database")

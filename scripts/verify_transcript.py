@@ -75,7 +75,11 @@ def verify_transcript(transcript_file):
             transcript_lines.append(line)
     
     print(f"[*] Found {len(transcript_lines)} messages in transcript")
-    print(f"[*] Peer Certificate Fingerprint: {peer_cert_fingerprint[:16]}...\n")
+    if peer_cert_fingerprint:
+       print(f"[*] Peer Certificate Fingerprint: {peer_cert_fingerprint[:16]}...\n")
+    else:
+       print("[!] Peer Certificate Fingerprint missing\n")
+
     
     # Load certificates for verification
     print("[*] Loading certificates...")
