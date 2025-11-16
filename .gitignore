@@ -56,3 +56,4 @@ backup/
 
 # Logs
 *.log
+captured.pcapng
